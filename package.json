@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "tsc && chmod u+x ./bin/index.js && ln -fs $(pwd)/bin/index.js $HOME/commands/load-tui",
+    "watch": "tsc --watch",
     "clean": "rm -r ./bin"
   }
 }
