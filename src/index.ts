@@ -6,15 +6,20 @@ import { promisify } from "util"
 // command to run
 const testCmd: Command = {
   title: "test",
-  command: "sleep 2 && printf 'hi mom'"
+  command: "sleep 2 && printf 'hi mom'",
+  runningState: Promise.resolve(true),
 }
 
 // execute command
 const exec = promisify(_exec)
 
-interface Command {
+interface CommandPrompt {
   title: string
   command: string
+}
+
+interface Command extends CommandPrompt {
+  runningState: Promise<boolean>,
 }
 
 // test exec
@@ -28,5 +33,5 @@ const runOneCommand = (cmd: Command) => exec(cmd.command).then(({ stdout }) => {
   // console.log(`Result: ${stdout}`)
 })
 
-
 runOneCommand(testCmd)
+
