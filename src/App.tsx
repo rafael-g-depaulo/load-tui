@@ -1,5 +1,5 @@
+import { Box, Text, useApp } from "ink";
 import React, { useEffect, useState } from "react";
-import { Text, useApp } from "ink";
 
 // render(<Text>test </Text>)
 //
@@ -40,25 +40,25 @@ import { Text, useApp } from "ink";
 // );
 
 export const App = () => {
-  const [counter, setCounter] = useState(0);
+	const [counter, setCounter] = useState(0);
 
-  const app = useApp();
+	const app = useApp();
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (counter < 69)
-        setCounter(previousCounter => previousCounter + 1);
+	useEffect(() => {
+		const timer = setInterval(() => {
+			if (counter < 69)
+				setCounter(previousCounter => previousCounter + 1);
 
-      else
-        app.exit();
+			else
+				app.exit();
 
-    }, 100);
+		}, 10);
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, [app, counter]);
+		return () => {
+			clearInterval(timer);
+		};
+	}, [app, counter]);
 
-  return <Text color="green">{counter} tests passed</Text>;
+	return <Box flexDirection="row"><Text color="green">{counter}</Text><Text color="white"> tests passed</Text></Box>;
 };
 
