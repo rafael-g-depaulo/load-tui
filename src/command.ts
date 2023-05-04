@@ -12,11 +12,6 @@ interface CommandPrompt {
 interface Command extends CommandPrompt {
   runningState: Promise<boolean>
 }
-// test exec
-// exec(command)
-// .then(({ stdout }) => {
-//   console.log(`out: ${stdout}`)
-// })
 
 const runOneCommand = (cmd: Command) =>
   exec(cmd.command).then(({ stdout }) => {
