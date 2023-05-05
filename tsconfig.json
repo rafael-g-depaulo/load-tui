@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "module": "nodenext",
+    "module": "es2022",
     "target": "es2020",
     "lib": [
       "esnext"
       // "dom",
     ],
+    "moduleResolution": "bundler",
     "jsx": "react", // React stuff
     "esModuleInterop": true,
     // "moduleResolution": "node",

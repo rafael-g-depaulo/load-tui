@@ -5,24 +5,21 @@ import { promisify } from "util"
 const exec = promisify(_exec)
 
 // types
-interface CommandPrompt {
+export interface Command {
   title: string
   command: string
 }
-interface Command extends CommandPrompt {
-  runningState: Promise<boolean>
-}
 
-const runOneCommand = (cmd: Command) =>
+export const runOneCommand = (cmd: Command) =>
   exec(cmd.command).then(({ stdout }) => {
-    console.table([{ title: cmd.title, out: stdout }])
+    // console.table([{ title: cmd.title, out: stdout }])
     // console.log(`Result: ${stdout}`)
+    return stdout
   })
 
 // command to run
 const testCmd: Command = {
   title: "test",
   command: "sleep 2 && printf 'hi mom'",
-  runningState: Promise.resolve(true),
 }
 runOneCommand(testCmd)
