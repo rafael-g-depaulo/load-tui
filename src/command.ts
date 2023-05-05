@@ -17,9 +17,9 @@ export const runOneCommand = (cmd: Command) =>
     return stdout
   })
 
-// command to run
-const testCmd: Command = {
-  title: "test",
-  command: "sleep 2 && printf 'hi mom'",
-}
-runOneCommand(testCmd)
+// // command to run
+// const testCmd: Command = {
+//   title: "test",
+//   command: "sleep 2 && printf 'hi mom'",
+// }
+// runOneCommand(testCmd)

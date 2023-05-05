@@ -7,6 +7,7 @@ import React, { FC } from "react"
 import { useCommand } from "./hooks/useCommand.js"
 import { Text } from "ink"
 import { Command } from "./command.js"
+import { LoadTable } from "./LoadTable.js"
 
 const cmdTest: Command = { title: "test", command: "sleep 5" }
 
@@ -19,5 +20,13 @@ export const Content: FC<{ cmd: Command }> = ({ cmd }) => {
 }
 
 export const App = () => {
-  return <Content cmd={cmdTest} />
+  // return <Content cmd={cmdTest} />
+  return (
+    <LoadTable
+      items={[
+        { title: "test", running: false },
+        { title: "haha", running: true },
+      ]}
+    />
+  )
 }

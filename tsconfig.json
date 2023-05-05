@@ -6,7 +6,7 @@
       "esnext"
       // "dom",
     ],
-    "moduleResolution": "bundler",
+    "moduleResolution": "nodenext",
     "jsx": "react", // React stuff
     "esModuleInterop": true,
     // "moduleResolution": "node",
