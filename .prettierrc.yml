@@ -1,0 +1,4 @@
+quoteProps: as-needed
+semi: false
+trailingComma: all
+# arrowParens: avoid
