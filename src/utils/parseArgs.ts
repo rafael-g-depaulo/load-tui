@@ -1,7 +1,4 @@
-export interface CommandPromt {
-  title: string
-  command: string
-}
+import { CommandPromt } from "./command.js"
 
 type Descriminator = string | number
 const groupBy = <T>(

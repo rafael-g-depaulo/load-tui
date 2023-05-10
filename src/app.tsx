@@ -1,14 +1,12 @@
 import React from "react"
 import { Text } from "ink"
 
-type Props = {
-  name: string | undefined
-}
+type Props = {}
 
-export default function App({ name = "Stranger" }: Props) {
+export default function App({}: Props) {
   return (
     <Text>
-      Hello, <Text color="green">{name}</Text>
+      Hello, <Text color="green">asdasasd</Text>
     </Text>
   )
 }

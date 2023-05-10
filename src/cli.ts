@@ -4,7 +4,7 @@ import meow from "meow"
 import App from "./app.js"
 // import { parseArgs } from "./utils/parseArgs.js"
 
-const cli = meow(
+export const cli = meow(
   `
 	Usage
 	  $ load-tui "name1" "command1 args here" "name2" "command2 args here" 
@@ -18,12 +18,8 @@ const cli = meow(
 `,
   {
     importMeta: import.meta,
-    flags: {
-      name: {
-        type: "string",
-      },
-    },
+    flags: {},
   },
 )
 
-render(App({ name: cli.flags.name }))
+render(App({}))
