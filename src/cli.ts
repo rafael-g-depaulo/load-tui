@@ -2,18 +2,19 @@
 import { render } from "ink"
 import meow from "meow"
 import App from "./app.js"
+import { parseArgs } from "./utils/parseArgs.js"
 
 const cli = meow(
   `
 	Usage
-	  $ load-tui
+	  $ load-tui "name1" "command1 args here" "name2" "command2 args here" 
 
 	Options
-		--name  Your name
+		--help
 
 	Examples
-	  $ load-tui --name=Jane
-	  Hello, Jane
+	  $ load-tui hi 'echo 1' hello 'echo 2'
+    # TODO: add example here
 `,
   {
     importMeta: import.meta,
