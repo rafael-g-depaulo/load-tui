@@ -22,6 +22,7 @@
     "@sindresorhus/tsconfig": "^3.0.1",
     "@types/ink": "^2.0.3",
     "@types/meow": "^6.0.0",
+    "@types/node": "^20.1.2",
     "@types/react": "^18.2.6",
     "@vdemedes/prettier-config": "^2.0.1",
     "eslint-config-xo-react": "^0.27.0",
