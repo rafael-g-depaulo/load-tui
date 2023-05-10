@@ -10,7 +10,6 @@ const groupBy = <T>(
 ): { [key: Descriminator]: T[] } =>
   arr.reduce((acc, cur, i) => {
     const desc = cb(cur, i)
-    // const group: T[] = [...acc[desc], cur]
     return { ...acc, [desc]: [...(acc[desc] ?? []), cur] }
   }, {} as { [key: Descriminator]: T[] })
 

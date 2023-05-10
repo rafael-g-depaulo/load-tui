@@ -2,7 +2,7 @@
 import { render } from "ink"
 import meow from "meow"
 import App from "./app.js"
-import { parseArgs } from "./utils/parseArgs.js"
+// import { parseArgs } from "./utils/parseArgs.js"
 
 const cli = meow(
   `
