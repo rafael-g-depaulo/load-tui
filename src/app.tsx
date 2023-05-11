@@ -1,20 +1,23 @@
 import React from "react"
 import { Text } from "ink"
-// import * as useSWR from "swr"
-// import { SWRHook } from "swr"
-// declare module "swr" {
-//   const _useSWR: SWRHook
-//   export { _useSWR as default }
-// }
-import useSWR from "swr"
+import { useCommand } from "./hooks/useCommand.js"
+// import { useCommand } from "./hooks/useCommand.js"
 
 type Props = {}
 
-export default function App({}: Props) {
-  const {} = useSWR("asd", () => Promise.resolve(true))
+export const App = ({}: Props) => {
+  const { running, data } = useCommand({
+    title: "asdsa",
+    command: "sleep 4 && echo teste",
+  })
+
+  if (running) return <Text>Running</Text>
+
   return (
     <Text>
-      Hello, <Text color="green">asdasasd</Text>
+      result is: <Text color="yellow">{data?.stdout ?? ""}</Text>
     </Text>
   )
 }
+
+export const getApp = (props: Props) => <App {...props} />

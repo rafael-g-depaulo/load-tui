@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 import { render } from "ink"
 import meow from "meow"
-import App from "./app.js"
+import { getApp } from "./app.js"
 // import { parseArgs } from "./utils/parseArgs.js"
 
 export const cli = meow(
   `
 	Usage
-	  $ load-tui "name1" "command1 args here" "name2" "command2 args here" 
+	  $ load-tui "name1" "command1 args here" "name2" "command2 args here"
 
 	Options
 		--help
@@ -22,4 +22,4 @@ export const cli = meow(
   },
 )
 
-render(App({}))
+render(getApp({}))
