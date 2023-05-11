@@ -1,4 +1,4 @@
-import { CommandPromt } from "./command.js"
+import { Command } from "./command.js"
 
 type Descriminator = string | number
 const groupBy = <T>(
@@ -10,7 +10,7 @@ const groupBy = <T>(
     return { ...acc, [desc]: [...(acc[desc] ?? []), cur] }
   }, {} as { [key: Descriminator]: T[] })
 
-export const parseArgs = (args: string[]): CommandPromt[] =>
+export const parseArgs = (args: string[]): Command[] =>
   Object.values(
     groupBy(args, (_, i) => Math.floor(i / 2)) as {
       [a: number]: [string, string]
