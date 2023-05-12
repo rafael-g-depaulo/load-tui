@@ -7,7 +7,7 @@ type Props = {}
 export const App = ({}: Props) => {
   const { running, data } = useCommand({
     title: "asdsa",
-    command: "sleep 4 && echo teste",
+    command: "sleep 1 && echo teste",
   })
 
   if (running) return <Text>Running</Text>
