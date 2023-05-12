@@ -1,7 +1,6 @@
 import React from "react"
 import { Text } from "ink"
 import { useCommand } from "./hooks/useCommand.js"
-// import { useCommand } from "./hooks/useCommand.js"
 
 type Props = {}
 
